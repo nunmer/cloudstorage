@@ -1,0 +1,229 @@
+<?php
+
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile page</title>
+		<script src="alert/dist/sweetalert-dev.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+        <link rel="stylesheet" href="gallery.css" media="screen" type="text/css" />
+		<link rel="stylesheet" href="footer.css" media="screen" type="text/css" />
+		<link rel="stylesheet" href="news.css" media="screen" type="text/css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		
+
+    </head>
+    <body style="margin: 0;"  id="home">
+
+
+
+	<div class="slidershow middle" id="news">
+
+	  <div class="slides">
+        <input type="radio" name="r" id="r1" checked>
+        <input type="radio" name="r" id="r2">
+        <input type="radio" name="r" id="r3">
+        <input type="radio" name="r" id="r4">
+        <input type="radio" name="r" id="r5">
+        <div class="slide s1">
+          <img src="img/1.jpg" alt="">
+        </div>
+        <div class="slide">
+          <img src="img/2.jpg" alt="">
+        </div>
+        <div class="slide">
+          <img src="img/3.jpg" alt="">
+        </div>
+        <div class="slide">
+          <img src="img/4.jpg" alt="">
+        </div>
+        <div class="slide">
+          <img src="img/5.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="navigation">
+        <label for="r1" class="bar"></label>
+        <label for="r2" class="bar"></label>
+        <label for="r3" class="bar"></label>
+        <label for="r4" class="bar"></label>
+        <label for="r5" class="bar"></label>
+      </div>
+    </div>
+	
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+		<div id="navbar">
+		  <a href="#home">Home</a>
+		  <a href="#news">News</a>
+		  <a href="#contact">Contact</a>
+		  <a href="login.php">Sign in</a>
+		</div>
+		<br><br><br><br><br>
+
+
+<!-- <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="upload/up-arrow.png"></button> -->
+<img id="myBtn" src='upload/up-arrow.png' onclick='topFunction()'>
+<script>
+var mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div class="container" id="contact">
+	
+		<form method="post" action="feedback.php">
+			<label for="fname">First Name</label>
+			<input type="text" id="dname" name="firstname" placeholder="Your name..">
+
+			<label for="lname">Last Name</label>
+			<input type="text" id="dlname" name="lastname" placeholder="Your last name..">
+			
+			<label for="feedback">Feed back</label>
+			<textarea id="feedback" name="feedback" placeholder="Text here.." style="height:200px"></textarea>
+
+			<input type="submit" value="Submit" name="feedback_btn">
+		</form>
+		
+	</div>
+	
+	<br><br><br><br><br><br><br>
+<style>
+	input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #662d91;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #522475;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+<script defer>
+	function contact(){
+		window.alert("Thank you for feedback, " + document.getElementById](dname) + " " + document.getElementById(dlname));
+		window.location.href = "index.html";
+	}
+</script>
+		
+    </body>
+
+ <footer class="site-footer">
+      <div class="footer-container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Some text here</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="#">CSS</a></li>
+              <li><a href="#">HTML</a></li>
+              <li><a href="#">PHP</a></li>
+              <li><a href="#">JavaScript</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Contribute</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="footer-container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved</p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
+
+</html>
